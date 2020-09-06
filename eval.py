@@ -21,6 +21,7 @@ FLAGS = tf.app.flags.FLAGS
 
 logger.setLevel(cfg.debug)
 
+
 def get_images():
     '''
     find image files in test data path
