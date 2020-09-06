@@ -36,6 +36,7 @@ def get_files(exts):
             os.path.join(FLAGS.training_data_path, '*.{}'.format(ext))))
     return files
 
+  
 def get_json_label():
     label_file_list = get_files(['json'])
     label = {}
@@ -119,6 +120,7 @@ def check_and_validate_polys(polys, tags, xxx_todo_changeme):
         validated_tags.append(tag)
     return np.array(validated_polys), np.array(validated_tags)
 
+  
 def crop_area(im, polys, tags, crop_background=False, max_tries=50):
     '''
     make random crop from the input image
@@ -182,6 +184,7 @@ def crop_area(im, polys, tags, crop_background=False, max_tries=50):
 
     return im, polys, tags
 
+  
 def perimeter(poly):
     try:
         p=0
@@ -194,6 +197,7 @@ def perimeter(poly):
         traceback.print_exc()
         raise e
 
+        
 def shrink_poly(poly, r):
     try:
         area_poly = abs(pyclipper.Area(poly))
